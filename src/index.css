@@ -1,3 +1,11 @@
 *{
   margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+body{
+  height: 100vh;
+  overflow-y: auto;
+  background-image: linear-gradient(#D8c7ff, #19006c);
+  font-family: poppins;
 }
