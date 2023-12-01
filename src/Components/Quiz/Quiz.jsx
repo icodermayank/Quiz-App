@@ -3,13 +3,16 @@ import './Quiz.css'
 import { data } from '../../assets/data';
 
 const Quiz = () => {
-    let [index, setIndex] = useState(1);
+    let [index, setIndex] = useState(0);
     let [question, setQuestion] = useState(data[index]);
     
     // lock state.
     let [lock,setLock] = useState(false);
 
+    // for score..
+    let [score, setScore] = useState(0);
 
+    // for highlighting the correct options.
     let option1 = useRef(null);
     let option2 = useRef(null);
     let option3 = useRef(null);
@@ -25,7 +28,8 @@ const Quiz = () => {
             if(question.ans === ans){
                 e.target.classList.add("correct");
                 setLock(true);
-
+                // increse score
+                setScore(prev=>prev+1);
             }
             else{
                 e.target.classList.add("wrong");
@@ -34,6 +38,21 @@ const Quiz = () => {
             }
         }
     }
+
+        // code on next button,
+        const next = () => {
+            if (lock === true){
+                setIndex(++index);
+                setQuestion(data[index]);
+                setLock(false);
+                option_array.map((option)=>{
+                    option.current.classList.remove("wrong");
+                    option.current.classList.remove("correct");
+                    return null;
+                })
+            }
+        }
+
 
   return (
     <div className='container'>
@@ -48,8 +67,8 @@ const Quiz = () => {
             <li ref={option4} onClick={(e)=>{checkAns(e,4)}}>{question.option4}</li>
 
         </ul>
-        <button>Next</button>
-        <div className='index'>{index+1} of 5 questions</div>
+        <button onClick={next}>Next</button>
+        <div className='index'>{index+1} of {data.length} questions</div>
         </div>
   )
 }
