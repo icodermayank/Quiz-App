@@ -1,24 +1,24 @@
 export const data = [
     {
-        question: "Which is required for the internet connection?",
-        option1: "Modem",
-        option2: "Router",
-        option3: "Lan Cable",
-        option4: "Pen Drive",
-        ans: 1,
+        question:"Which is required for the internet connection?",
+        option1:"Modem",
+        option2:"Router",
+        option3:"Lan Cable",
+        option4:"Pen Drive",
+        ans:1,
 
     },
     {
         question:"Which is not a input device?",
         option1:"Printer",
-        option2:"mouse",
-        option3:"joystick",
-        option3: "monitor",
+        option2:"Mouse",
+        option3:"Joystick",
+        option4:"Monitor",
         ans:1,
     },
 
     {
-        question: "Which is not a programming language?",
+        question:"Which is not a programming language?",
         option1:"java",
         option2:"R",
         option3:"css",
@@ -27,7 +27,7 @@ export const data = [
     },
 
     {
-        question: "Which is an object oriented programming language?",
+        question:"Which is an object oriented programming language?",
         option1:"SQL",
         option2:"C",
         option3:"React",
@@ -41,6 +41,6 @@ export const data = [
     option3:"Amazon",
     option4:"Meta",
     ans:2,
-    }
+    },
 
-]
+];
