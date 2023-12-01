@@ -6,15 +6,23 @@ const Quiz = () => {
     let [index, setIndex] = useState(1);
     let [question, setQuestion] = useState(data[index]);
     
+    // lock state.
+    let [lock,setLock] = useState(false);
+    
     // checking either ans correct or wrong..
 
     const checkAns = (e, ans) => {
-        if(question.ans === ans){
-            e.target.classList.add("correct");
+        if(lock === false){
 
-        }
-        else{
-            e.target.classList.add("wrong");
+            if(question.ans === ans){
+                e.target.classList.add("correct");
+                setLock(true);
+
+            }
+            else{
+                e.target.classList.add("wrong");
+                setLock(true);
+            }
         }
     }
 
