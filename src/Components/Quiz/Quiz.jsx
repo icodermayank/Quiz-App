@@ -3,7 +3,7 @@ import './Quiz.css'
 import { data } from '../../assets/data';
 
 const Quiz = () => {
-    let [index, setIndex] = useState(0);
+    let [index, setIndex] = useState(1);
     let [question, setQuestion] = useState(data[index]);
     
     // checking either ans correct or wrong..
@@ -32,7 +32,7 @@ const Quiz = () => {
 
         </ul>
         <button>Next</button>
-        <div className='index'>1 of 5 questions</div>
+        <div className='index'>{index+1} of 5 questions</div>
         </div>
   )
 }
