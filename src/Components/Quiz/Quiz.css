@@ -10,7 +10,7 @@
     border-radius: 10px;
     padding: 40px 50px;
     scroll-behavior: none;
-    overflow: auto;
+    
 
 }
 .container hr{
@@ -52,4 +52,14 @@
     margin: auto;
     font-size: 18px;
 
+}
+
+
+.correct{
+    background: #dffff2;
+    border-color: #00d397;
+}
+.wrong{
+    background: #ffebeb;
+    border-color: #ff4a4a;
 }
